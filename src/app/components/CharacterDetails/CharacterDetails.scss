@@ -1,0 +1,107 @@
+$color-black: #000000;
+$color-deep-blue: #081f32;
+$color-gray: #8e8e93;
+$color-slate-gray: #6e798c;
+$color-light-gray: #f2f2f7;
+$font-family-button: "Karla";
+$layout-breakpoint-small: 712px;
+
+@mixin font-styling($weight, $size, $height, $spacing) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+.button__go-back {
+  @include font-styling(700, 18px, 21px, normal);
+  font-family: $font-family-button;
+  color: $color-black;
+  border: none;
+  padding: 2px 15px;
+  position: absolute;
+  width: 140px;
+  height: 21px;
+  left: 55px;
+  top: 25px;
+  background: url("../../../assets/arrow-back-icon.png") no-repeat scroll 4px
+  4px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.character-details {
+  &__holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .info {
+      width: 85%;
+      max-width: 400px;
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: 300px;
+    border: 5px solid $color-light-gray;
+    border-radius: 150px;
+    margin: 70px auto 15px auto;
+  }
+
+  &__name {
+    @include font-styling(400, 48px, 56px, normal);
+    text-align: center;
+    color: $color-deep-blue;
+    margin: 0 20px;
+  }
+
+  &__info-header {
+    @include font-styling(500, 20px, 24px, 0.15px);
+    color: $color-gray;
+    margin: 50px auto;
+  }
+
+  &__detail-holder {
+    height: 60px;
+    width: 100%;
+    max-width: 400px;
+    padding-top: 15px;
+    border-radius: 0px;
+    border-bottom: 1px solid $color-light-gray;
+    margin: 0 auto;
+  }
+
+  &__subtitle {
+    @include font-styling(700, 16px, 24px, 0.15px);
+    color: $color-deep-blue;
+    margin: 0;
+  }
+
+  &__data {
+    margin: 0;
+    @include font-styling(400, 14px, 20px, 0.25px);
+    color: $color-slate-gray;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    .button__go-back {
+      left: 25px;
+    }
+  
+    &__image {
+      margin: 125px auto 35px auto;
+      width: 150px;
+      height: 150px;
+    }
+  
+    &__name {
+      @include font-styling(400, 32px, 38px, normal);
+    }
+  
+    &__info-header {
+      margin: 35px 40px;
+      align-self:baseline;
+    }
+  }
+}

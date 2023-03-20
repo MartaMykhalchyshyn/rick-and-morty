@@ -1,0 +1,28 @@
+$color-black-semi-transparent: rgba(0, 0, 0, 0.5);
+$search_icon: "../../../assets/search-icon.svg";
+$layout-breakpoint-small: 712px;
+
+.filter {
+  &-container {
+    width: 70%;
+    max-width: 1020px;
+  }
+
+  &-input {
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 16px 48px;
+    gap: 8px;
+    height: 56px;
+    width: 100%;
+    border: 1px solid $color-black-semi-transparent;
+    border-radius: 8px;
+    background: url($search-icon) no-repeat scroll 18px 18px;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    &-container {
+      width: 90%;
+    }
+  }
+}
